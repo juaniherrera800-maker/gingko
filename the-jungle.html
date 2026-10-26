@@ -1,0 +1,1420 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#10140d" />
+    <meta
+      name="description"
+      content="THE JUNGLE en Ginkgo Bar. Fiesta privada, promociones 2x1 y sorteo durante la noche."
+    />
+
+    <title>THE JUNGLE | Ginkgo</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800;900&family=Montserrat:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      :root {
+        --fondo: #10140d;
+        --fondo-secundario: #171d14;
+        --panel: #1d2418;
+        --verde: #657b36;
+        --verde-claro: #a5b76a;
+        --dorado: #c9a227;
+        --dorado-claro: #f2d675;
+        --blanco: #f7f5f0;
+        --gris: #b9bbae;
+        --borde: rgba(201, 162, 39, 0.3);
+        --titulo: "Cinzel", Georgia, serif;
+        --texto: "Montserrat", Arial, sans-serif;
+      }
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      html {
+        scroll-behavior: smooth;
+        scroll-padding-top: 25px;
+      }
+
+      body {
+        background: var(--fondo);
+        color: var(--blanco);
+        font-family: var(--texto);
+        line-height: 1.6;
+        overflow-x: hidden;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+        -webkit-tap-highlight-color: transparent;
+      }
+
+      .contenedor {
+        width: min(1120px, 90%);
+        margin-inline: auto;
+      }
+
+      .dorado {
+        color: var(--dorado-claro);
+      }
+
+      .etiqueta {
+        color: var(--dorado-claro);
+        font-size: 0.7rem;
+        font-weight: 800;
+        letter-spacing: 0.22em;
+        text-transform: uppercase;
+      }
+
+      .titulo-seccion {
+        font-family: var(--titulo);
+        font-size: clamp(1.8rem, 5vw, 3rem);
+        line-height: 1.2;
+        margin-top: 8px;
+        text-transform: uppercase;
+      }
+
+      .seccion {
+        padding: 80px 0;
+      }
+
+      .encabezado-seccion {
+        text-align: center;
+        margin-bottom: 38px;
+      }
+
+      .linea-dorada {
+        width: 54px;
+        height: 3px;
+        margin: 18px auto 0;
+        background: var(--dorado);
+        box-shadow: 0 0 16px rgba(201, 162, 39, 0.4);
+      }
+
+      .subtitulo-seccion {
+        max-width: 560px;
+        margin: 15px auto 0;
+        color: var(--gris);
+        font-size: 0.85rem;
+      }
+
+      /* HEADER: NO ES FIJO */
+
+      .barra {
+        position: relative;
+        z-index: 10;
+        background: #10140d;
+        border-bottom: 1px solid var(--borde);
+      }
+
+      .barra-interior {
+        min-height: 70px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 20px;
+      }
+
+      .marca {
+        font-family: var(--titulo);
+        font-size: 1.05rem;
+        font-weight: 800;
+        letter-spacing: 0.1em;
+        white-space: nowrap;
+      }
+
+      .marca span,
+      .footer-marca span {
+        color: var(--dorado-claro);
+      }
+
+      .navegacion {
+        display: flex;
+        align-items: center;
+        gap: 22px;
+      }
+
+      .navegacion a {
+        color: #d8d8cd;
+        font-size: 0.68rem;
+        font-weight: 700;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        transition: color 0.2s;
+      }
+
+      .navegacion a:hover {
+        color: var(--dorado-claro);
+      }
+
+      .navegacion .nav-entrada {
+        border: 1px solid var(--dorado);
+        padding: 9px 12px;
+        color: var(--dorado-claro);
+      }
+
+      /* BOTONES */
+
+      .boton {
+        min-height: 46px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 9px;
+        padding: 12px 20px;
+        border: 1px solid var(--dorado);
+        font-family: var(--texto);
+        font-size: 0.68rem;
+        font-weight: 800;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        transition:
+          background 0.2s,
+          color 0.2s,
+          transform 0.2s;
+        cursor: pointer;
+      }
+
+      .boton:hover {
+        transform: translateY(-2px);
+      }
+
+      .boton-principal {
+        background: var(--dorado);
+        color: #17170d;
+      }
+
+      .boton-principal:hover {
+        background: var(--dorado-claro);
+      }
+
+      .boton-secundario {
+        background: rgba(10, 15, 8, 0.55);
+        color: var(--dorado-claro);
+      }
+
+      .boton-secundario:hover {
+        background: var(--dorado);
+        color: #17170d;
+      }
+
+      /* ÍCONO DE INSTAGRAM */
+
+      .instagram-icono {
+        width: 21px;
+        height: 21px;
+        display: block;
+        flex-shrink: 0;
+      }
+
+      .instagram-flotante {
+        position: fixed;
+        right: 22px;
+        bottom: 22px;
+        z-index: 50;
+        width: 54px;
+        height: 54px;
+        display: grid;
+        place-items: center;
+        border: 1px solid var(--dorado-claro);
+        border-radius: 50%;
+        background: var(--dorado);
+        color: #11150d;
+        box-shadow: 0 5px 22px rgba(0, 0, 0, 0.4);
+        transition:
+          transform 0.2s,
+          background 0.2s;
+      }
+
+      .instagram-flotante:hover {
+        transform: translateY(-4px) scale(1.04);
+        background: var(--dorado-claro);
+      }
+
+      .instagram-flotante .instagram-icono {
+        width: 27px;
+        height: 27px;
+      }
+
+      /* PORTADA */
+
+      .portada {
+        min-height: min(760px, 88svh);
+        position: relative;
+        isolation: isolate;
+        display: grid;
+        place-items: center;
+        text-align: center;
+        padding: 85px 20px;
+        overflow: hidden;
+        background:
+          linear-gradient(
+            180deg,
+            rgba(5, 10, 5, 0.35),
+            rgba(5, 10, 5, 0.45) 35%,
+            rgba(5, 10, 5, 0.9)
+          ),
+          url("./assets/bosque.avif") center/cover no-repeat,
+          #182014;
+      }
+
+      .portada::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        z-index: -1;
+        background: radial-gradient(
+          ellipse at center,
+          rgba(201, 162, 39, 0.14),
+          transparent 60%
+        );
+      }
+
+      .portada-contenido {
+        width: min(1000px, 100%);
+        animation: aparecer 1s ease both;
+      }
+
+      .portada-superior {
+        color: var(--dorado-claro);
+        font-size: 0.7rem;
+        font-weight: 800;
+        letter-spacing: 0.32em;
+        text-transform: uppercase;
+      }
+
+      .portada h1 {
+        font-family: var(--titulo);
+        font-size: clamp(2.3rem, 8.5vw, 7rem);
+        line-height: 1.1;
+        letter-spacing: 0.02em;
+        margin: 20px 0;
+        font-weight: 900;
+        white-space: nowrap;
+        text-shadow: 0 5px 30px #000;
+      }
+
+      .portada h1 span {
+        display: inline;
+        color: var(--dorado-claro);
+      }
+
+      .portada-frase {
+        font-size: clamp(0.8rem, 2vw, 1.05rem);
+        letter-spacing: 0.13em;
+        text-transform: uppercase;
+      }
+
+      .portada-linea {
+        height: 1px;
+        width: min(330px, 75%);
+        background: linear-gradient(
+          90deg,
+          transparent,
+          var(--dorado),
+          transparent
+        );
+        margin: 25px auto;
+      }
+
+      .portada-fecha {
+        font-family: var(--titulo);
+        font-size: clamp(1.1rem, 3vw, 1.55rem);
+        color: var(--dorado-claro);
+      }
+
+      .portada-lugar {
+        margin-top: 5px;
+        font-size: 0.8rem;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+      }
+
+      .botones-portada {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 12px;
+        margin-top: 30px;
+      }
+
+      .bajada {
+        position: absolute;
+        bottom: 18px;
+        left: 0;
+        right: 0;
+        color: rgba(255, 255, 255, 0.6);
+        font-size: 0.62rem;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+      }
+
+      /* INFORMACIÓN PRINCIPAL */
+
+      .datos-rapidos {
+        background: var(--fondo-secundario);
+        border-top: 1px solid var(--borde);
+        border-bottom: 1px solid var(--borde);
+      }
+
+      .datos-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .dato {
+        text-align: center;
+        padding: 23px 12px;
+        border-right: 1px solid var(--borde);
+      }
+
+      .dato:last-child {
+        border-right: none;
+      }
+
+      .dato-icono {
+        color: var(--dorado);
+        font-size: 1.15rem;
+      }
+
+      .dato-titulo {
+        color: var(--gris);
+        font-size: 0.63rem;
+        font-weight: 700;
+        letter-spacing: 0.13em;
+        text-transform: uppercase;
+      }
+
+      .dato-valor {
+        font-family: var(--titulo);
+        color: var(--dorado-claro);
+        font-size: clamp(0.9rem, 2.5vw, 1.2rem);
+        margin-top: 4px;
+      }
+
+      /* PROMOCIONES */
+
+      .promociones {
+        background:
+          radial-gradient(
+            ellipse at top,
+            rgba(101, 123, 54, 0.14),
+            transparent 60%
+          ),
+          var(--fondo);
+      }
+
+      .promos-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 18px;
+      }
+
+      .promo-card {
+        min-height: 280px;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 28px 24px;
+        overflow: hidden;
+        border: 1px solid var(--borde);
+        background:
+          linear-gradient(155deg, rgba(101, 123, 54, 0.17), transparent 55%),
+          var(--panel);
+        transition:
+          transform 0.25s,
+          border-color 0.25s;
+      }
+
+      .promo-card:hover {
+        transform: translateY(-5px);
+        border-color: var(--dorado);
+      }
+
+      .promo-numero {
+        color: rgba(242, 214, 117, 0.16);
+        position: absolute;
+        right: 15px;
+        top: 2px;
+        font-family: var(--titulo);
+        font-size: 5rem;
+        line-height: 1;
+      }
+
+      .promo-icono {
+        width: 48px;
+        height: 48px;
+        display: grid;
+        place-items: center;
+        border: 1px solid var(--dorado);
+        color: var(--dorado-claro);
+        font-size: 1.3rem;
+        margin-bottom: 22px;
+      }
+
+      .promo-card h3 {
+        position: relative;
+        font-family: var(--titulo);
+        font-size: 1.15rem;
+        line-height: 1.3;
+        margin-bottom: 10px;
+      }
+
+      .promo-card p {
+        color: var(--gris);
+        font-size: 0.8rem;
+        margin-bottom: 22px;
+      }
+
+      .promo-link {
+        margin-top: auto;
+        color: var(--dorado-claro);
+        font-size: 0.67rem;
+        font-weight: 800;
+        letter-spacing: 0.07em;
+        text-transform: uppercase;
+        border-bottom: 1px solid var(--dorado);
+        padding-bottom: 4px;
+      }
+
+      .promo-aclaracion {
+        margin-top: 22px;
+        text-align: center;
+        color: var(--gris);
+        font-size: 0.72rem;
+      }
+
+      /* SORTEO */
+
+      .sorteo {
+        position: relative;
+        overflow: hidden;
+        background:
+          radial-gradient(
+            ellipse at top,
+            rgba(101, 123, 54, 0.2),
+            transparent 65%
+          ),
+          var(--fondo-secundario);
+        border-top: 1px solid var(--borde);
+        border-bottom: 1px solid var(--borde);
+      }
+
+      .sorteo-card {
+        position: relative;
+        width: min(760px, 100%);
+        margin: 0 auto;
+        padding: 55px 30px;
+        text-align: center;
+        overflow: hidden;
+        border: 1px solid var(--dorado);
+        background:
+          linear-gradient(145deg, rgba(101, 123, 54, 0.16), transparent 55%),
+          #11170e;
+        box-shadow: inset 0 0 55px rgba(201, 162, 39, 0.045);
+      }
+
+      .sorteo-decoracion {
+        color: rgba(242, 214, 117, 0.12);
+        position: absolute;
+        top: -35px;
+        right: 20px;
+        font-size: 9rem;
+        pointer-events: none;
+      }
+
+      .sorteo-card .titulo-seccion {
+        position: relative;
+        margin-top: 12px;
+      }
+
+      .sorteo-card .linea-dorada {
+        margin-bottom: 25px;
+      }
+
+      .sorteo-texto {
+        position: relative;
+        max-width: 530px;
+        margin: 0 auto 25px;
+        color: var(--gris);
+        font-size: 0.9rem;
+      }
+
+      .sorteo-premio {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        width: min(430px, 100%);
+        margin: 0 auto 28px;
+        padding: 18px;
+        text-align: left;
+        border: 1px solid var(--borde);
+        background: rgba(255, 255, 255, 0.025);
+      }
+
+      .sorteo-premio > span {
+        font-size: 2rem;
+      }
+
+      .sorteo-premio strong {
+        display: block;
+        color: var(--dorado-claro);
+        font-family: var(--titulo);
+        font-size: 0.95rem;
+      }
+
+      .sorteo-premio p {
+        color: var(--gris);
+        font-size: 0.75rem;
+        margin-top: 3px;
+      }
+
+      .sorteo-aclaracion {
+        margin-top: 18px;
+        color: var(--gris);
+        font-size: 0.68rem;
+      }
+
+      /* UBICACIÓN */
+
+      .ubicacion {
+        background: var(--fondo);
+      }
+
+      .ubicacion-card {
+        max-width: 1000px;
+        margin: 0 auto;
+        overflow: hidden;
+        border: 1px solid var(--borde);
+        background: var(--fondo-secundario);
+      }
+
+      .ubicacion-descripcion {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 25px;
+        padding: 28px;
+        border-bottom: 1px solid var(--borde);
+      }
+
+      .ubicacion-descripcion h3 {
+        font-family: var(--titulo);
+        font-size: 1.2rem;
+        margin: 8px 0;
+      }
+
+      .ubicacion-descripcion p {
+        color: var(--gris);
+        font-size: 0.82rem;
+      }
+
+      .ubicacion-nota {
+        padding-left: 22px;
+        border-left: 1px solid var(--borde);
+      }
+
+      .mapa-contenedor {
+        width: 100%;
+        height: 400px;
+        background: #202b19;
+      }
+
+      .mapa-contenedor iframe {
+        display: block;
+        width: 100%;
+        height: 100%;
+        border: 0;
+      }
+
+      .ubicacion-info {
+        padding: 25px 30px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 20px;
+      }
+
+      .ubicacion-info h3 {
+        font-family: var(--titulo);
+        font-size: 1.45rem;
+        margin: 5px 0;
+      }
+
+      .ubicacion-info p {
+        color: var(--gris);
+        font-size: 0.82rem;
+      }
+
+      /* INSTAGRAM */
+
+      .redes {
+        padding: 65px 0;
+        text-align: center;
+        border-top: 1px solid var(--borde);
+        background:
+          radial-gradient(
+            ellipse at center,
+            rgba(101, 123, 54, 0.16),
+            transparent 65%
+          ),
+          #11160e;
+      }
+
+      .redes h2 {
+        font-family: var(--titulo);
+        font-size: clamp(1.7rem, 5vw, 2.7rem);
+        margin: 10px 0;
+      }
+
+      .redes p {
+        color: var(--gris);
+        font-size: 0.83rem;
+        margin-bottom: 18px;
+      }
+
+      .instagram-handle {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        color: var(--dorado-claro);
+        font-weight: 800;
+        margin-bottom: 22px;
+        transition: color 0.2s;
+      }
+
+      .instagram-handle:hover {
+        color: white;
+      }
+
+      /* PIE */
+
+      footer {
+        padding: 25px 0;
+        border-top: 1px solid var(--borde);
+        text-align: center;
+        background: #0b0e09;
+      }
+
+      .footer-marca {
+        font-family: var(--titulo);
+        font-weight: 800;
+        letter-spacing: 0.12em;
+        font-size: 1rem;
+      }
+
+      footer p {
+        margin-top: 6px;
+        color: #888b7f;
+        font-size: 0.67rem;
+      }
+
+      @keyframes aparecer {
+        from {
+          opacity: 0;
+          transform: translateY(16px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      /* CONTADOR REGRESIVO */
+      .contador-regresivo {
+        width: fit-content;
+        max-width: 100%;
+        margin: 24px auto 0;
+        padding: 16px 18px;
+        border: 1px solid var(--borde);
+        background: rgba(8, 13, 7, 0.78);
+        box-shadow: 0 8px 28px rgba(0, 0, 0, 0.28);
+      }
+
+      .contador-titulo {
+        margin-bottom: 12px;
+        color: var(--dorado-claro);
+        font-size: 0.62rem;
+        font-weight: 800;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+      }
+
+      .contador-grid {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(48px, 68px));
+        gap: 9px;
+      }
+
+      .contador-unidad {
+        padding: 9px 5px;
+        border: 1px solid rgba(201, 162, 39, 0.22);
+        background: rgba(255, 255, 255, 0.035);
+      }
+
+      .contador-numero {
+        display: block;
+        color: var(--blanco);
+        font-family: var(--titulo);
+        font-size: clamp(1.35rem, 4vw, 1.9rem);
+        font-weight: 800;
+        line-height: 1.1;
+        font-variant-numeric: tabular-nums;
+      }
+
+      .contador-etiqueta {
+        display: block;
+        margin-top: 5px;
+        color: var(--gris);
+        font-size: 0.52rem;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      .contador-finalizado {
+        color: var(--dorado-claro);
+        font-size: 0.8rem;
+        font-weight: 800;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      /* RESPONSIVE */
+
+      @media (max-width: 760px) {
+        .barra-interior {
+          padding: 10px 0;
+          flex-direction: column;
+          gap: 10px;
+        }
+
+        .marca {
+          font-size: 0.95rem;
+        }
+
+        .navegacion {
+          justify-content: center;
+          flex-wrap: wrap;
+          gap: 10px 15px;
+        }
+
+        .navegacion a {
+          font-size: 0.59rem;
+        }
+
+        .navegacion .nav-entrada {
+          padding: 6px 9px;
+        }
+
+        .portada {
+          min-height: 78svh;
+          padding: 75px 10px;
+        }
+
+        .portada-superior {
+          font-size: 0.59rem;
+          letter-spacing: 0.2em;
+        }
+
+        .portada h1 {
+          font-size: clamp(2rem, 9.5vw, 4.5rem);
+          letter-spacing: 0;
+        }
+
+        .portada-frase {
+          font-size: 0.7rem;
+          letter-spacing: 0.08em;
+        }
+
+        .portada-fecha {
+          font-size: 1.05rem;
+        }
+
+        .portada-lugar {
+          font-size: 0.7rem;
+        }
+
+        .boton {
+          padding: 11px 14px;
+          font-size: 0.62rem;
+        }
+
+        .datos-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .dato {
+          padding: 15px 10px;
+          border-right: none;
+          border-bottom: 1px solid var(--borde);
+        }
+
+        .dato:last-child {
+          border-bottom: none;
+        }
+
+        .dato-icono {
+          display: none;
+        }
+
+        .dato-valor {
+          font-size: 1.05rem;
+        }
+
+        .seccion {
+          padding: 60px 0;
+        }
+
+        .promos-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .promo-card {
+          min-height: 230px;
+          padding: 25px 22px;
+        }
+
+        .sorteo-card {
+          padding: 42px 20px;
+        }
+
+        .sorteo-texto {
+          font-size: 0.82rem;
+        }
+
+        .sorteo-premio {
+          padding: 14px;
+        }
+
+        .ubicacion-descripcion {
+          grid-template-columns: 1fr;
+          padding: 22px;
+          gap: 22px;
+        }
+
+        .ubicacion-nota {
+          padding-left: 0;
+          padding-top: 20px;
+          border-left: none;
+          border-top: 1px solid var(--borde);
+        }
+
+        .mapa-contenedor {
+          height: 320px;
+        }
+
+        .ubicacion-info {
+          padding: 23px 18px;
+          flex-direction: column;
+          text-align: center;
+        }
+
+        .subtitulo-seccion {
+          font-size: 0.8rem;
+        }
+
+        .instagram-flotante {
+          right: 15px;
+          bottom: 15px;
+          width: 48px;
+          height: 48px;
+        }
+      }
+
+      @media (max-width: 360px) {
+        .portada h1 {
+          font-size: 1.85rem;
+          letter-spacing: -0.02em;
+        }
+
+        .portada-superior {
+          letter-spacing: 0.12em;
+        }
+
+        .navegacion {
+          gap: 9px;
+        }
+
+        .navegacion a {
+          font-size: 0.55rem;
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        html {
+          scroll-behavior: auto;
+        }
+
+        *,
+        *::before,
+        *::after {
+          animation-duration: 0.01ms !important;
+          transition-duration: 0.01ms !important;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- HEADER -->
+    <header class="barra">
+      <div class="contenedor barra-interior">
+        <a class="marca" href="#inicio" aria-label="The Jungle, inicio">
+          THE <span>JUNGLE</span>
+        </a>
+
+        <nav class="navegacion" aria-label="Navegación principal">
+          <a href="#promociones">Promos</a>
+          <a href="#sorteo">Sorteo</a>
+          <a href="#ubicacion">Ubicación</a>
+          <a class="nav-entrada" href="#sorteo">Participar</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <!-- PORTADA -->
+      <section class="portada" id="inicio">
+        <div class="portada-contenido">
+          <p class="portada-superior">Una noche fuera de lo común</p>
+
+          <h1>THE <span>JUNGLE</span></h1>
+
+          <p class="portada-frase">Entrá en la selva. Viví la noche.</p>
+
+          <div class="portada-linea"></div>
+
+          <p class="portada-fecha">23 DE OCTUBRE · 02:30 H</p>
+          <p class="portada-lugar">Ginkgo Bar · Fiesta privada</p>
+
+          <!-- CONTADOR REGRESIVO -->
+          <div
+            class="contador-regresivo"
+            aria-label="Cuenta regresiva para The Jungle"
+          >
+            <p class="contador-titulo">La jungla despierta en</p>
+            <div
+              class="contador-grid"
+              id="contador-regresivo"
+              role="timer"
+              aria-live="off"
+            >
+              <div class="contador-unidad">
+                <span class="contador-numero" id="contador-dias">00</span>
+                <span class="contador-etiqueta">Días</span>
+              </div>
+              <div class="contador-unidad">
+                <span class="contador-numero" id="contador-horas">00</span>
+                <span class="contador-etiqueta">Horas</span>
+              </div>
+              <div class="contador-unidad">
+                <span class="contador-numero" id="contador-minutos">00</span>
+                <span class="contador-etiqueta">Minutos</span>
+              </div>
+              <div class="contador-unidad">
+                <span class="contador-numero" id="contador-segundos">00</span>
+                <span class="contador-etiqueta">Segundos</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="botones-portada">
+            <a class="boton boton-principal" href="#promociones">
+              Ver promociones
+            </a>
+
+            <a class="boton boton-secundario" href="#sorteo"> Ir al sorteo </a>
+          </div>
+        </div>
+
+        <div class="bajada">Una noche · Una experiencia · The Jungle</div>
+      </section>
+
+      <!-- INFORMACIÓN PRINCIPAL -->
+      <section class="datos-rapidos" aria-label="Información principal">
+        <div class="contenedor datos-grid">
+          <div class="dato">
+            <div class="dato-icono" aria-hidden="true">✦</div>
+            <p class="dato-titulo">Fecha</p>
+            <p class="dato-valor">23 de octubre</p>
+          </div>
+
+          <div class="dato">
+            <div class="dato-icono" aria-hidden="true">◷</div>
+            <p class="dato-titulo">Horario</p>
+            <p class="dato-valor">Desde las 02:30 h</p>
+          </div>
+
+          <div class="dato">
+            <div class="dato-icono" aria-hidden="true">⌖</div>
+            <p class="dato-titulo">Modalidad</p>
+            <p class="dato-valor">Fiesta privada</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- PROMOCIONES -->
+      <section class="seccion promociones" id="promociones">
+        <div class="contenedor">
+          <div class="encabezado-seccion">
+            <p class="etiqueta">La noche se disfruta más</p>
+            <h2 class="titulo-seccion">
+              Promociones <span class="dorado">2x1</span>
+            </h2>
+            <div class="linea-dorada"></div>
+            <p class="subtitulo-seccion">
+              Aprovechá el 2x1 en los tragos seleccionados y disfrutá The
+              Jungle.
+            </p>
+          </div>
+
+          <div class="promos-grid">
+            <article class="promo-card">
+              <span class="promo-numero" aria-hidden="true">01</span>
+              <div class="promo-icono" aria-hidden="true">♧</div>
+              <h3>Fernet 2x1</h3>
+              <p>Tu clásico de la noche, con promo 2x1.</p>
+              <a class="promo-link" href="#redes"> Seguir novedades ↗ </a>
+            </article>
+
+            <article class="promo-card">
+              <span class="promo-numero" aria-hidden="true">02</span>
+              <div class="promo-icono" aria-hidden="true">✦</div>
+              <h3>Campari y Gancia 2x1</h3>
+              <p>Compartí tus tragos favoritos con la promoción 2x1.</p>
+              <a class="promo-link" href="#redes"> Seguir novedades ↗ </a>
+            </article>
+
+            <article class="promo-card">
+              <span class="promo-numero" aria-hidden="true">03</span>
+              <div class="promo-icono" aria-hidden="true">♢</div>
+              <h3>Gin tonic 2x1</h3>
+              <p>Una opción fresca para disfrutar la noche en la selva.</p>
+              <a class="promo-link" href="#redes"> Seguir novedades ↗ </a>
+            </article>
+          </div>
+
+          <p class="promo-aclaracion">
+            Promoción 2x1 en Fernet, Campari, Gancia y gin tonic. Consultá en el
+            evento las condiciones y disponibilidad.
+          </p>
+        </div>
+      </section>
+
+      <!-- SORTEO -->
+      <section class="seccion sorteo" id="sorteo">
+        <div class="contenedor">
+          <div class="sorteo-card">
+            <div class="sorteo-decoracion" aria-hidden="true">✦</div>
+
+            <p class="etiqueta">La sorpresa de la noche</p>
+
+            <h2 class="titulo-seccion">
+              SORTEO <span class="dorado">THE JUNGLE</span>
+            </h2>
+
+            <div class="linea-dorada"></div>
+
+            <p class="sorteo-texto">
+              ¡La noche también viene con sorpresa! Durante la fiesta vamos a
+              realizar el sorteo. Seguí nuestro Instagram para enterarte del
+              premio, cómo participar y conocer las condiciones.
+            </p>
+
+            <div class="sorteo-premio">
+              <span aria-hidden="true">🎁</span>
+              <div>
+                <strong>¿Quién se lleva el premio?</strong>
+                <p>El sorteo se realiza esa misma noche.</p>
+              </div>
+            </div>
+
+            <a
+              class="boton boton-principal"
+              href="https://www.instagram.com/thejunglee.official/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <svg
+                class="instagram-icono"
+                viewBox="0 0 24 24"
+                fill="none"
+                aria-hidden="true"
+              >
+                <rect
+                  x="3"
+                  y="3"
+                  width="18"
+                  height="18"
+                  rx="5"
+                  stroke="currentColor"
+                  stroke-width="2"
+                />
+                <circle
+                  cx="12"
+                  cy="12"
+                  r="4"
+                  stroke="currentColor"
+                  stroke-width="2"
+                />
+                <circle cx="17.5" cy="6.8" r="1.2" fill="currentColor" />
+              </svg>
+              Ver Instagram
+            </a>
+
+            <p class="sorteo-aclaracion">
+              Consultá la publicación oficial para conocer las bases y
+              condiciones.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- UBICACIÓN -->
+      <section class="seccion ubicacion" id="ubicacion">
+        <div class="contenedor">
+          <div class="encabezado-seccion">
+            <p class="etiqueta">Prepará tu llegada</p>
+            <h2 class="titulo-seccion">
+              ¿Dónde es <span class="dorado">The Jungle?</span>
+            </h2>
+            <div class="linea-dorada"></div>
+            <p class="subtitulo-seccion">
+              Toda la información para ubicar el lugar de encuentro.
+            </p>
+          </div>
+
+          <div class="ubicacion-card">
+            <div class="ubicacion-descripcion">
+              <div>
+                <p class="etiqueta">Lugar del evento</p>
+                <h3>Ginkgo Bar</h3>
+                <p>
+                  The Jungle es una joda privada que se realiza en Ginkgo Bar.
+                  Nos encontramos el 23 de octubre desde las 02:30 h.
+                </p>
+              </div>
+
+              <div class="ubicacion-nota">
+                <p class="etiqueta">Antes de salir</p>
+                <h3>Tené en cuenta</h3>
+                <p>
+                  Al ser una fiesta privada, consultá por Instagram la
+                  información de ingreso y cualquier indicación adicional para
+                  llegar al evento.
+                </p>
+              </div>
+            </div>
+
+            <div class="mapa-contenedor">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d812.6270846045467!2d-58.804805671505775!3d-35.442207605685105!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bd6917bbc40971%3A0xb4067f92c6c5ffbf!2sGingko%20Bar!5e0!3m2!1ses-419!2sar!4v1792625383450!5m2!1ses-419!2sar"
+                title="Ubicación de Ginkgo Bar en Google Maps"
+                loading="lazy"
+                allowfullscreen
+                referrerpolicy="strict-origin-when-cross-origin"
+              ></iframe>
+            </div>
+
+            <div class="ubicacion-info">
+              <div>
+                <p class="etiqueta">Punto de encuentro</p>
+                <h3>Ginkgo Bar</h3>
+                <p>23 de octubre · Desde las 02:30 h · Fiesta privada</p>
+              </div>
+
+              <a
+                class="boton boton-secundario"
+                href="https://www.google.com/maps/search/?api=1&query=Gingko+Bar"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Abrir Google Maps ↗
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- INSTAGRAM -->
+      <section class="redes" id="redes">
+        <div class="contenedor">
+          <p class="etiqueta">No te pierdas las novedades</p>
+
+          <h2>Entrá en la <span class="dorado">selva</span></h2>
+
+          <p>
+            Seguinos para conocer las novedades, el sorteo y la información del
+            evento.
+          </p>
+
+          <a
+            class="instagram-handle"
+            href="https://www.instagram.com/thejunglee.official/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Visitar Instagram de The Jungle"
+          >
+            <svg
+              class="instagram-icono"
+              viewBox="0 0 24 24"
+              fill="none"
+              aria-hidden="true"
+            >
+              <rect
+                x="3"
+                y="3"
+                width="18"
+                height="18"
+                rx="5"
+                stroke="currentColor"
+                stroke-width="2"
+              />
+              <circle
+                cx="12"
+                cy="12"
+                r="4"
+                stroke="currentColor"
+                stroke-width="2"
+              />
+              <circle cx="17.5" cy="6.8" r="1.2" fill="currentColor" />
+            </svg>
+            @thejunglee.official
+          </a>
+
+          <br />
+
+          <a
+            class="boton boton-principal"
+            href="https://www.instagram.com/thejunglee.official/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <svg
+              class="instagram-icono"
+              viewBox="0 0 24 24"
+              fill="none"
+              aria-hidden="true"
+            >
+              <rect
+                x="3"
+                y="3"
+                width="18"
+                height="18"
+                rx="5"
+                stroke="currentColor"
+                stroke-width="2"
+              />
+              <circle
+                cx="12"
+                cy="12"
+                r="4"
+                stroke="currentColor"
+                stroke-width="2"
+              />
+              <circle cx="17.5" cy="6.8" r="1.2" fill="currentColor" />
+            </svg>
+            Seguir en Instagram
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <!-- BOTÓN FLOTANTE DE INSTAGRAM -->
+    <a
+      class="instagram-flotante"
+      href="https://www.instagram.com/thejunglee.official/"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Abrir Instagram de The Jungle"
+      title="Instagram de The Jungle"
+    >
+      <svg
+        class="instagram-icono"
+        viewBox="0 0 24 24"
+        fill="none"
+        aria-hidden="true"
+      >
+        <rect
+          x="3"
+          y="3"
+          width="18"
+          height="18"
+          rx="5"
+          stroke="currentColor"
+          stroke-width="2"
+        />
+        <circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="2" />
+        <circle cx="17.5" cy="6.8" r="1.2" fill="currentColor" />
+      </svg>
+    </a>
+
+    <!-- PIE DE PÁGINA -->
+    <footer>
+      <div class="contenedor">
+        <div class="footer-marca">THE <span>JUNGLE</span></div>
+        <p>Una noche diferente · Ginkgo Bar</p>
+        <p>23 de octubre · Desde las 02:30 h</p>
+        <p>Fiesta privada</p>
+      </div>
+    </footer>
+
+    <!-- SCRIPT DEL CONTADOR REGRESIVO -->
+    <script>
+      // 23 de octubre de 2026 a las 02:30, horario de Argentina (UTC-3).
+      const fechaEventoJungle = new Date("2026-11-15T02:30:00-03:00").getTime();
+
+      const contadorJungle = document.getElementById("contador-regresivo");
+      const diasJungle = document.getElementById("contador-dias");
+      const horasJungle = document.getElementById("contador-horas");
+      const minutosJungle = document.getElementById("contador-minutos");
+      const segundosJungle = document.getElementById("contador-segundos");
+
+      function actualizarContadorJungle() {
+        const ahora = Date.now();
+        const diferencia = fechaEventoJungle - ahora;
+
+        if (diferencia <= 0) {
+          contadorJungle.innerHTML =
+            '<p class="contador-finalizado">¡The Jungle ya comenzó!</p>';
+          clearInterval(intervaloContadorJungle);
+          return;
+        }
+
+        diasJungle.textContent = String(
+          Math.floor(diferencia / (1000 * 60 * 60 * 24)),
+        ).padStart(2, "0");
+
+        horasJungle.textContent = String(
+          Math.floor((diferencia % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)),
+        ).padStart(2, "0");
+
+        minutosJungle.textContent = String(
+          Math.floor((diferencia % (1000 * 60 * 60)) / (1000 * 60)),
+        ).padStart(2, "0");
+
+        segundosJungle.textContent = String(
+          Math.floor((diferencia % (1000 * 60)) / 1000),
+        ).padStart(2, "0");
+      }
+
+      actualizarContadorJungle();
+      const intervaloContadorJungle = setInterval(
+        actualizarContadorJungle,
+        1000,
+      );
+    </script>
+  </body>
+</html>

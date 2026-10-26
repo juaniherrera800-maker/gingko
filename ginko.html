@@ -1,0 +1,700 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <meta name="theme-color" content="#101014" />
+    <title>Gingko Nights | The Jungle</title>
+
+    <style>
+      :root {
+        --fondo: #101014;
+        --panel: #19191f;
+        --texto: #f7f5f8;
+        --suave: #aaa6b2;
+        --verde: #c7ff3f;
+        --violeta: #d83aff;
+        --borde: rgba(255, 255, 255, 0.12);
+      }
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        background: var(--fondo);
+        color: var(--texto);
+        font-family: Arial, Helvetica, sans-serif;
+        line-height: 1.5;
+      }
+
+      .contenedor {
+        width: min(100% - 32px, 850px);
+        margin: auto;
+      }
+
+      /* PORTADA GINGKO */
+
+      .portada {
+        text-align: center;
+        padding: 28px 16px 24px;
+        border-bottom: 1px solid var(--borde);
+        background:
+          radial-gradient(
+            ellipse at top,
+            rgba(216, 58, 255, 0.13),
+            transparent 65%
+          ),
+          var(--fondo);
+      }
+
+      .logo-img {
+        max-width: min(260px, 80%);
+        height: auto;
+        display: block;
+        margin: 0 auto;
+      }
+
+      .subtitulo {
+        margin-top: 8px;
+        color: var(--suave);
+        font-size: 0.72rem;
+        letter-spacing: 0.25em;
+        text-transform: uppercase;
+      }
+
+      .linea {
+        width: 42px;
+        height: 3px;
+        background: var(--verde);
+        margin: 17px auto 0;
+      }
+
+      /* NAVEGACIÓN */
+
+      .navegacion {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 9px 20px;
+        padding: 16px;
+        border-bottom: 1px solid var(--borde);
+        font-size: 0.82rem;
+      }
+
+      .navegacion a {
+        color: var(--suave);
+        text-decoration: none;
+        transition: color 0.2s ease;
+      }
+
+      .navegacion a:hover {
+        color: var(--verde);
+      }
+
+      /* CONTENEDOR PRINCIPAL */
+
+      main.contenedor {
+        padding-top: 25px;
+      }
+
+      /* THE JUNGLE: BANNER CON IMAGEN DE FONDO Y TEXTO SUPERPUESTO */
+
+      .jungle-banner {
+        position: relative;
+        overflow: hidden;
+        margin-bottom: 28px;
+        border: 1px solid rgba(199, 255, 63, 0.45);
+        border-radius: 5px;
+        box-shadow: 0 8px 28px rgba(0, 0, 0, 0.22);
+        min-height: 260px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      /* Imagen de fondo absoluta */
+      .jungle-imagen {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+        z-index: 1;
+      }
+
+      /* Capa oscura translúcida para que el texto resalte sobre la imagen */
+      .jungle-banner::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: rgba(16, 23, 19, 0.75); /* Oscurece la imagen de fondo */
+        z-index: 2;
+      }
+
+      .jungle-contenido {
+        position: relative;
+        z-index: 3; /* Por encima de la imagen y la capa oscura */
+        padding: 30px 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        width: 100%;
+      }
+
+      .jungle-etiqueta {
+        color: var(--verde);
+        font-size: 0.68rem;
+        font-weight: 800;
+        letter-spacing: 0.25em;
+        text-transform: uppercase;
+        margin-bottom: 8px;
+      }
+
+      .jungle-titulo {
+        color: #fff;
+        font-size: clamp(2rem, 6vw, 3.5rem);
+        font-weight: 950;
+        line-height: 1;
+        letter-spacing: 0.07em;
+        text-transform: uppercase;
+        font-family: "Times New Roman", "Georgia", serif;
+        filter: drop-shadow(0 3px 6px rgba(0, 0, 0, 0.9));
+      }
+
+      .jungle-titu {
+        font-family: "Cinzel", serif;
+        font-weight: 950;
+        text-transform: uppercase;
+        letter-spacing: 0.07em;
+        /* color: #f2d675; */
+      }
+
+      .jungle-titulo span {
+        color: var(--verde);
+      }
+
+      .jungle-linea {
+        width: 48px;
+        height: 3px;
+        background: var(--verde);
+        margin: 12px auto 0;
+        box-shadow: 0 0 12px rgba(199, 255, 63, 0.4);
+      }
+
+      .jungle-tipo {
+        display: inline-block;
+        margin-top: 12px;
+        padding: 5px 12px;
+        background: var(--verde);
+        color: var(--fondo);
+        border-radius: 3px;
+        font-size: 0.7rem;
+        font-weight: 900;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+      }
+
+      .jungle-descripcion {
+        margin-top: 10px;
+        color: #f0f0e8;
+        font-size: 0.72rem;
+        font-weight: 600;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        text-shadow: 0 2px 8px #000;
+      }
+
+      /* ETIQUETAS */
+
+      .etiqueta {
+        color: var(--verde);
+        text-transform: uppercase;
+        letter-spacing: 0.2em;
+        font-size: 0.7rem;
+        font-weight: bold;
+      }
+
+      /* SECCIONES DE BEBIDAS */
+
+      .categoria {
+        margin: 26px 0;
+        padding: 23px;
+        background: var(--panel);
+        border: 1px solid var(--borde);
+        border-radius: 5px;
+        scroll-margin-top: 18px;
+      }
+
+      .categoria-titulo {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        margin-bottom: 8px;
+        padding-bottom: 14px;
+        border-bottom: 1px solid var(--borde);
+      }
+
+      .numero {
+        color: var(--verde);
+        font-weight: 900;
+        font-size: 0.8rem;
+      }
+
+      h2 {
+        font-size: 1.25rem;
+        text-transform: uppercase;
+        letter-spacing: 0.04em;
+      }
+
+      .producto {
+        display: flex;
+        align-items: baseline;
+        justify-content: space-between;
+        gap: 14px;
+        padding: 13px 0;
+        border-bottom: 1px dashed rgba(255, 255, 255, 0.09);
+      }
+
+      .producto:last-child {
+        border-bottom: none;
+        padding-bottom: 0;
+      }
+
+      .producto-info {
+        min-width: 0;
+      }
+
+      .producto-nombre {
+        font-size: 0.96rem;
+        font-weight: 700;
+      }
+
+      .producto-detalle {
+        color: var(--suave);
+        font-size: 0.78rem;
+        margin-top: 2px;
+      }
+
+      .precio {
+        flex-shrink: 0;
+        color: var(--verde);
+        font-weight: 800;
+        font-size: 0.95rem;
+        white-space: nowrap;
+      }
+
+      /* PROMOCIONES */
+
+      .promo {
+        margin: 0 0 32px;
+        padding: 25px;
+        border-left: 3px solid var(--verde);
+        background: linear-gradient(100deg, #22251a, #19191f);
+        scroll-margin-top: 18px;
+      }
+
+      .promo h2 {
+        font-size: 1.35rem;
+        margin: 7px 0;
+      }
+
+      .promo p {
+        color: var(--suave);
+        font-size: 0.88rem;
+      }
+
+      /* PIE */
+
+      footer {
+        margin-top: 45px;
+        padding: 28px 0;
+        text-align: center;
+        border-top: 1px solid var(--borde);
+      }
+
+      .footer-logo {
+        font-weight: 900;
+        letter-spacing: 0.16em;
+      }
+
+      footer p {
+        color: var(--suave);
+        font-size: 0.78rem;
+        margin-top: 7px;
+      }
+
+      footer a {
+        color: var(--verde);
+        text-decoration: none;
+      }
+
+      .jungle-link {
+        display: block;
+        color: inherit;
+        text-decoration: none;
+        cursor: pointer;
+      }
+
+      .jungle-link .jungle-banner {
+        transition:
+          transform 0.25s ease,
+          border-color 0.25s ease;
+      }
+
+      .jungle-link:hover .jungle-banner {
+        transform: scale(1.01);
+        border-color: #c9a227;
+      }
+
+      /* ADAPTACIÓN A CELULARES */
+
+      @media (max-width: 480px) {
+        .contenedor {
+          width: calc(100% - 22px);
+        }
+
+        .portada {
+          padding: 23px 12px 20px;
+        }
+
+        .navegacion {
+          gap: 10px 14px;
+          padding: 14px 10px;
+        }
+
+        main.contenedor {
+          padding-top: 18px;
+        }
+
+        .jungle-banner {
+          min-height: 220px;
+          margin-bottom: 22px;
+        }
+
+        .jungle-contenido {
+          padding: 20px 12px;
+        }
+
+        .jungle-etiqueta {
+          font-size: 0.61rem;
+          letter-spacing: 0.17em;
+        }
+
+        .jungle-descripcion {
+          font-size: 0.62rem;
+          letter-spacing: 0.08em;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- PORTADA GINGKO NIGHTS -->
+
+    <header class="portada">
+      <img
+        src="./assets/foto-gingko-sin-fondo.png"
+        alt="Gingko Nights"
+        class="logo-img"
+      />
+      <div class="subtitulo">La noche es de todos</div>
+      <div class="linea"></div>
+    </header>
+
+    <!-- NAVEGACIÓN DE LA CARTA -->
+
+    <nav class="navegacion">
+      <a href="#promos">Promos</a>
+      <a href="#cervezas">Cervezas</a>
+      <a href="#tragos">Tragos</a>
+      <a href="#shots">Shots</a>
+      <a href="#botellas">Botellas</a>
+      <a href="#sin-alcohol">Sin alcohol</a>
+    </nav>
+
+    <!-- CONTENIDO PRINCIPAL -->
+
+    <main class="contenedor">
+      <!-- THE JUNGLE: BANNER CON FONDO DE IMAGEN -->
+
+      <section class="jungle-banner" aria-label="The Jungle">
+        <a
+          href="./the-jungle.html"
+          class="jungle-link"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img
+            src="./assets/bosque.avif"
+            alt="Ambientación selvática de The Jungle"
+            class="jungle-imagen"
+          />
+          <div class="jungle-contenido">
+            <div class="jungle-etiqueta">GINGKO NIGHTS PRESENTA</div>
+
+            <h1 class="jungle-titu">
+              THE <br />
+              <span>JUNGLE</span>
+            </h1>
+
+            <div class="jungle-linea"></div>
+
+            <div class="jungle-tipo">FIESTA DE DISFRACES</div>
+          </div>
+        </a>
+      </section>
+
+      <!-- PROMOCIONES -->
+
+      <section class="promo" id="promos">
+        <div class="etiqueta">Para compartir</div>
+        <h2>Promociones</h2>
+        <p>Consultá las promos disponibles durante cada evento.</p>
+
+        <div class="producto">
+          <div class="producto-info">
+            <div class="producto-nombre">Promo de la noche</div>
+            <div class="producto-detalle">Consultar disponibilidad</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CERVEZAS -->
+
+      <section class="categoria" id="cervezas">
+        <div class="categoria-titulo">
+          <span class="numero">01</span>
+          <h2>Cervezas</h2>
+        </div>
+
+        <div class="producto">
+          <div class="producto-info">
+            <div class="producto-nombre">Cerveza lata</div>
+            <div class="producto-detalle">
+              Presentación según disponibilidad
+            </div>
+          </div>
+          <div class="precio">$0.000</div>
+        </div>
+
+        <div class="producto">
+          <div class="producto-info">
+            <div class="producto-nombre">Cerveza porrón</div>
+            <div class="producto-detalle">Consultar variedad</div>
+          </div>
+          <div class="precio">$0.000</div>
+        </div>
+
+        <div class="producto">
+          <div class="producto-info">
+            <div class="producto-nombre">Cerveza grande</div>
+            <div class="producto-detalle">Consultar marcas disponibles</div>
+          </div>
+          <div class="precio">$0.000</div>
+        </div>
+      </section>
+
+      <!-- TRAGOS -->
+
+      <section class="categoria" id="tragos">
+        <div class="categoria-titulo">
+          <span class="numero">02</span>
+          <h2>Tragos</h2>
+        </div>
+
+        <div class="producto">
+          <div class="producto-info">
+            <div class="producto-nombre">Fernet con cola</div>
+            <div class="producto-detalle">Clásico de la noche</div>
+          </div>
+          <div class="precio">$0.000</div>
+        </div>
+
+        <div class="producto">
+          <div class="producto-info">
+            <div class="producto-nombre">Gin tonic</div>
+            <div class="producto-detalle">Gin, tónica y cítricos</div>
+          </div>
+          <div class="precio">$0.000</div>
+        </div>
+
+        <div class="producto">
+          <div class="producto-info">
+            <div class="producto-nombre">Vodka con energizante</div>
+            <div class="producto-detalle">Consultar opciones</div>
+          </div>
+          <div class="precio">$0.000</div>
+        </div>
+
+        <div class="producto">
+          <div class="producto-info">
+            <div class="producto-nombre">Campari con naranja</div>
+            <div class="producto-detalle">Clásico con naranja</div>
+          </div>
+          <div class="precio">$0.000</div>
+        </div>
+
+        <div class="producto">
+          <div class="producto-info">
+            <div class="producto-nombre">Gancia</div>
+            <div class="producto-detalle">Consultar preparación</div>
+          </div>
+          <div class="precio">$0.000</div>
+        </div>
+      </section>
+
+      <!-- SHOTS -->
+
+      <section class="categoria" id="shots">
+        <div class="categoria-titulo">
+          <span class="numero">03</span>
+          <h2>Shots</h2>
+        </div>
+
+        <div class="producto">
+          <div class="producto-info">
+            <div class="producto-nombre">Shot de tequila</div>
+          </div>
+          <div class="precio">$0.000</div>
+        </div>
+
+        <div class="producto">
+          <div class="producto-info">
+            <div class="producto-nombre">Shot de vodka</div>
+          </div>
+          <div class="precio">$0.000</div>
+        </div>
+
+        <div class="producto">
+          <div class="producto-info">
+            <div class="producto-nombre">Shot de licor</div>
+            <div class="producto-detalle">Consultar variedades</div>
+          </div>
+          <div class="precio">$0.000</div>
+        </div>
+      </section>
+
+      <!-- BOTELLAS -->
+
+      <section class="categoria" id="botellas">
+        <div class="categoria-titulo">
+          <span class="numero">04</span>
+          <h2>Botellas</h2>
+        </div>
+
+        <div class="producto">
+          <div class="producto-info">
+            <div class="producto-nombre">Vodka</div>
+            <div class="producto-detalle">Marca y presentación a confirmar</div>
+          </div>
+          <div class="precio">$00.000</div>
+        </div>
+
+        <div class="producto">
+          <div class="producto-info">
+            <div class="producto-nombre">Fernet</div>
+            <div class="producto-detalle">Marca y presentación a confirmar</div>
+          </div>
+          <div class="precio">$00.000</div>
+        </div>
+
+        <div class="producto">
+          <div class="producto-info">
+            <div class="producto-nombre">Gin</div>
+            <div class="producto-detalle">Marca y presentación a confirmar</div>
+          </div>
+          <div class="precio">$00.000</div>
+        </div>
+
+        <div class="producto">
+          <div class="producto-info">
+            <div class="producto-nombre">Whisky</div>
+            <div class="producto-detalle">Marca y presentación a confirmar</div>
+          </div>
+          <div class="precio">$00.000</div>
+        </div>
+      </section>
+
+      <!-- SIN ALCOHOL -->
+
+      <section class="categoria" id="sin-alcohol">
+        <div class="categoria-titulo">
+          <span class="numero">05</span>
+          <h2>Sin alcohol</h2>
+        </div>
+
+        <div class="producto">
+          <div class="producto-info">
+            <div class="producto-nombre">Agua mineral</div>
+          </div>
+          <div class="precio">$0.000</div>
+        </div>
+
+        <div class="producto">
+          <div class="producto-info">
+            <div class="producto-nombre">Gaseosa</div>
+            <div class="producto-detalle">Consultar variedades</div>
+          </div>
+          <div class="precio">$0.000</div>
+        </div>
+
+        <div class="producto">
+          <div class="producto-info">
+            <div class="producto-nombre">Energizante</div>
+            <div class="producto-detalle">
+              Presentación según disponibilidad
+            </div>
+          </div>
+          <div class="precio">$0.000</div>
+        </div>
+      </section>
+    </main>
+
+    <!-- PIE DE PÁGINA -->
+
+    <footer>
+      <div class="contenedor">
+        <div class="footer-logo">GINGKO NIGHTS</div>
+        <p>San Miguel del Monte · Buenos Aires</p>
+
+        <p>
+          Instagram:
+          <a
+            href="https://www.instagram.com/gingkonihgts/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            @gingkonihgts
+          </a>
+        </p>
+
+        <p>
+          Instagram:
+          <a
+            href="https://www.instagram.com/thejunglee.official/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            @thejunglee.official
+          </a>
+        </p>
+
+        <p>Precios sujetos a cambios según el evento.</p>
+      </div>
+    </footer>
+  </body>
+</html>
